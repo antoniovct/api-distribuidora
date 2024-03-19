@@ -1,0 +1,6 @@
+CREATE TABLE produtos (
+id BIGINT AUTO_INCREMENT,
+nome VARCHAR(100),
+preco DOUBLE,
+marcas_id BIGINT,
+PRIMARY KEY(id));

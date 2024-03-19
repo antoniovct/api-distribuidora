@@ -1,0 +1,7 @@
+CREATE TABLE marcas (
+id BIGINT AUTO_INCREMENT,
+cnpj VARCHAR(100),
+razao VARCHAR(100),
+fantasia VARCHAR(100),
+produtos_id BIGINT,
+PRIMARY KEY(id));
