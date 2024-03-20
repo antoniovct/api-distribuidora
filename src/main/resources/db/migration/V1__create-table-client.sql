@@ -1,4 +1,4 @@
-CREATE TABLE client (
+CREATE TABLE cliente (
 id BIGINT AUTO_INCREMENT,
 cnpj VARCHAR(100),
 razao VARCHAR(100),

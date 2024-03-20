@@ -12,7 +12,8 @@ public class Client {
     private String cnpj;
     private String razao;
     private String fantasia;
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "endereco_id")
     private Adress adress;
     @Column(name = "telefone")
     private String telephone;
@@ -84,6 +85,22 @@ public class Client {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public void atualizarCadastro(ClientDto dadosAtualizados) {
+       if (dadosAtualizados.cnpj() != null){
+           this.cnpj = dadosAtualizados.cnpj();
+       }else if (dadosAtualizados.razao() != null){
+            this.razao = dadosAtualizados.razao();
+        }else if (dadosAtualizados.fantasia() != null){
+            this.fantasia = dadosAtualizados.fantasia();
+        }else if (dadosAtualizados.adress() != null){
+            this.adress = new Adress(dadosAtualizados.adress());
+        }else if (dadosAtualizados.telephone() != null) {
+           this.telephone = dadosAtualizados.telephone();
+       }else if (dadosAtualizados.email() != null) {
+           this.email = dadosAtualizados.email();
+       }
     }
 
     @Override
